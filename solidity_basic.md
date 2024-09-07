@@ -7,5 +7,6 @@ require();
 ```solidity
  modifier ownerOf(uint _zombieId) {
     require(msg.sender == zombieToOwner[_zombieId]);
+    _;
   }
 ```
