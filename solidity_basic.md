@@ -14,10 +14,14 @@ function funcName(uint _age) public {
 }
 ```
 ### Function Visibility Specifiers
-`public`
-`private`
-`external`
-`internal`
+`public`：自动生成 getter 函数
+
+`private`：只能在定义它的合约内部被调用
+
+`internal`：`private` + 继承它的合约中被调用
+
+`external`/：
+
 
 
 ```solidity
