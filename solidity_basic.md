@@ -67,3 +67,4 @@ require();
 `pure`  `view`  `payable`  `indexed`
 
 `++`
+`import "./someothercontract.sol";`
