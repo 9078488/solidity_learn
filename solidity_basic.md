@@ -41,3 +41,8 @@ function funcName(uint _age) public {
 ```solidity
 require();
 ```
+
+### Validations and Assertions
+`assert(bool condition)`
+
+`require(bool condition)`
