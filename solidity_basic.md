@@ -46,3 +46,9 @@ require();
 `assert(bool condition)`
 
 `require(bool condition)`
+
+### Mathematical and Cryptographic Functions
+`keccak256(bytes memory)`
+
+### Modifiers
+`pure`  `view`  `payable`  `indexed`
