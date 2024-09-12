@@ -68,3 +68,6 @@ require();
 
 `++`
 `import "./someothercontract.sol";`
+```solidity
+struct可类似于uint做数据类型
+```
