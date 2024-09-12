@@ -40,3 +40,7 @@ require();
 
 ### 算术运算
 `+  -  *  /  %    **`
+
+
+### Block and Transaction Properties
+`msg.sender` `msg.value`
