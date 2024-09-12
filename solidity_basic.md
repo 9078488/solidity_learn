@@ -89,6 +89,6 @@ require();
 ```solidity
 struct可类似于uint做数据类型
 ```
-`stroage memory`
+`stroage memory calldata`
 `Zombie storage myZombie = zombies[_zombieId];`
 `now`
