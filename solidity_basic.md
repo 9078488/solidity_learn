@@ -20,7 +20,7 @@ function funcName(uint _age) public {
 
 `internal`：`private` + 继承它的合约中被调用
 
-`external`/：
+`external`：仅合约外部可访问
 
 
 
