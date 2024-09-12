@@ -58,6 +58,7 @@ function funcName(uint _age) public {
 
 ## Types
 `uint age = 18;`
+`address`
 ### Value Types
 `int / uint`: uint8 / uint256
 
