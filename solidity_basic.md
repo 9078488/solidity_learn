@@ -13,6 +13,11 @@ contract contractName {
 function funcName(uint _age) public {
 }
 ```
+### Function Visibility Specifiers
+`public`
+`private`
+`external`
+`internal`
 
 
 ```solidity
