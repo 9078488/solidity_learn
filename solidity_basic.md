@@ -8,7 +8,7 @@ contract contractName {
 }
 ```
 
-## function & modifier
+## function-definition
 ### function框架
 ```solidity
 function funcName(uint _age) public {
@@ -24,7 +24,7 @@ function funcName(uint _age) public {
 
 `external`：仅合约外部可访问
 
-### modifier
+### modifier-definition
 ```solidity
  modifier ownerOf(uint _zombieId) {
     require(msg.sender == zombieToOwner[_zombieId]);
