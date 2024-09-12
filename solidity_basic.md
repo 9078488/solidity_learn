@@ -25,7 +25,7 @@ function funcName(uint _age) public {
 ### Function Visibility Specifiers
 `public`：自动生成 getter 函数
 
-`private`：只能在定义它的合约内部被调用
+`private`：只能在定义它的合约内部被调用,函数名前面一般加 `_`
 
 `internal`：`private` + 继承它的合约中被调用
 
