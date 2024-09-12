@@ -7,12 +7,14 @@ contract contractName {
 
 }
 ```
-## function
+
+## function & modifier
 ### function框架
 ```solidity
 function funcName(uint _age) public {
 }
 ```
+
 ### Function Visibility Specifiers
 `public`：自动生成 getter 函数
 
@@ -22,13 +24,6 @@ function funcName(uint _age) public {
 
 `external`：仅合约外部可访问
 
-
-
-```solidity
-msg.sender
-require();
-```
-
 ### modifier
 ```solidity
  modifier ownerOf(uint _zombieId) {
@@ -37,10 +32,12 @@ require();
   }
 ```
 
-
 ### 算术运算
 `+  -  *  /  %    **`
 
-
 ### Block and Transaction Properties
 `msg.sender` `msg.value`
+
+```solidity
+require();
+```
