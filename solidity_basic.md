@@ -64,6 +64,7 @@ function funcName(uint _age) public {
 `uint age = 18;`
 `address`
 `bool`
+`bytes32`
 ```
 struct Voter {
     uint weight;
