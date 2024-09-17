@@ -42,6 +42,13 @@ contract ZombieFeeding is ZombieFactory {
 function funcName(uint _age) public {
 }
 ```
+### 构造函数
+```solidity
+constructor(bytes32[] memory proposalNames) {
+
+}
+```
+构造函数在合约部署时自动执行一次，用于初始化合约的状态变量。
 
 ### Function Visibility Specifiers
 `public`：自动生成 getter 函数
@@ -62,9 +69,15 @@ function funcName(uint _age) public {
 
 ## Types
 `uint age = 18;`
+
 `address`
+
 `bool`
+
 `bytes32`
+
+`mapping`
+
 ```
 struct Voter {
     uint weight;
@@ -125,6 +138,6 @@ struct可类似于uint做数据类型
 `stroage memory calldata`
 `Zombie storage myZombie = zombies[_zombieId];`
 `now`
-`uint[]`
+`uint[]`:数组
 
 
