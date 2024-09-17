@@ -99,6 +99,10 @@ require();
 
 `@custom`:`/// @custom:experimental This is an experimental contract.`
 
+`@param`:`/// @param rings The number of rings from dendrochronological sample`
+
+`@return`: `/// @return Age in years, rounded up for partial years`
+
 
 
 
