@@ -96,14 +96,15 @@ struct Voter {
 ### Block and Transaction Properties
 `msg.sender` `msg.value`
 
-```solidity
-require();
-```
+
 
 ### Validations and Assertions
 `assert(bool condition)`
 
-`require(bool condition)`
+#### require(bool condition)
+a.
+`require(voters[voter].weight == 0);`
+`require(voters[voter].weight == 0), "a message";`
 
 ### Mathematical and Cryptographic Functions
 `keccak256(bytes memory)`
