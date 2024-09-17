@@ -63,6 +63,15 @@ function funcName(uint _age) public {
 ## Types
 `uint age = 18;`
 `address`
+`bool`
+```
+struct Voter {
+    uint weight;
+    bool voted;
+    address delegate;
+    uint vote; 
+}
+```
 ### Value Types
 `int / uint`: uint8 / uint256
 
