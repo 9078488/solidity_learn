@@ -89,7 +89,19 @@ require();
 `pure`  `view`  `payable`  `indexed`
 
 ### NatSpec Format
+`@title`:`/// @title A simulator for trees`
+
 `@author`:`/// @author Larry A. Gardner`
+
+`@notice`:`/// @notice You can use this contract for only the most basic simulation`
+
+`@dev`：`/// @dev All function calls are currently implemented without side effects`
+
+`@custom`:`/// @custom:experimental This is an experimental contract.`
+
+
+
+
 
 `++`
 `import "./someothercontract.sol";`
