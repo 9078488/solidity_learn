@@ -70,7 +70,7 @@ constructor(bytes32[] memory proposalNames) {
 ## Types
 `uint age = 18;`
 
-`address`
+`address` `address(0)`
 
 `bool`
 
