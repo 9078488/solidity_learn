@@ -88,6 +88,9 @@ require();
 ### Modifiers
 `pure`  `view`  `payable`  `indexed`
 
+### NatSpec Format
+`@author`:`/// @author Larry A. Gardner`
+
 `++`
 `import "./someothercontract.sol";`
 ```solidity
@@ -97,3 +100,5 @@ struct可类似于uint做数据类型
 `Zombie storage myZombie = zombies[_zombieId];`
 `now`
 `uint[]`
+
+
