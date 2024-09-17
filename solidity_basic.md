@@ -126,7 +126,8 @@ require();
 
 `@return`: `/// @return Age in years, rounded up for partial years`
 
-
+### Control Structures
+There is: `if`, `else`, `whil`e, `do`, `for`, `break`, `continue`, `return`, with the usual semantics known from C or JavaScript.
 
 
 
