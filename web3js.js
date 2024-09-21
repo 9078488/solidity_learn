@@ -1,3 +1,6 @@
+
+
+### Example
 ```javascript
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
