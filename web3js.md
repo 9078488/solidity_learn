@@ -8,11 +8,16 @@
 `import Web3 from 'web3';`
 
 `const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");`
+`const web3 = new Web3(window.ethereum);`
 
 `window.ethereum`:Most Ethereum-supported browsers like MetaMask have an EIP-1193 compliant provider available at  `window.ethereum`
 
+
+
 # API Reference
 ## web3.utils
+### isAddress
+`web3.utils.isAddress(address)`  return`Boolean`
 ### toWei
 `web3.utils.toWei(number [, unit])`
 
