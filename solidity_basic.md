@@ -2,6 +2,8 @@ https://cryptozombies.io/en/lesson/3/chapter/11
 
 https://github.com/MaiJiantian/solidityExample
 
+官方教程的example已学完Simple Open Auction
+
 ## contract
 ### constract-definition
 ```solidty
