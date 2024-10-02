@@ -30,9 +30,16 @@ myContract.methods.myMethod(123).call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4
     ...
 });
 ```
-
+### methods.myMethod.send
 `const tx = await contract.methods.bid().send({ from: account, value: weiAmount}); `
-
+### events
+```
+contract.events.LuckyNumberSetted({}, function(error, event){ console.log(event); })
+.on('data', function(event) {
+    console.log("event", event);
+    setEventLuckyNumber(event.returnValues.newLuckyNumber.toString())
+})
+```
 ## web3.utils
 ### isAddress
 `web3.utils.isAddress(address)`  return`Boolean`
