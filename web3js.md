@@ -9,6 +9,13 @@
 #### 3.
 `const web3 = new Web3(endPoint);`
 
+写合约时，需要请求访问账户：
+```
+// 请求用户授权访问他们的账户
+const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+setAccount(accounts[0]);   
+```
+
 #### 4.
 `const contract = new web3.eth.Contract(abi, contractAddress);`
 
