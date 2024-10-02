@@ -95,6 +95,8 @@ constructor(bytes32[] memory proposalNames) {
 
 `bytes32`
 
+`bytes32(0)` 表示一个 32 字节的零值。具体来说，它是一个 32 字节的二进制数据，所有位都被设置为零。这个值通常用于表示一个空或无效的状态。
+
 `mapping`
 
 ```
@@ -185,7 +187,7 @@ address.send(amount）
 ```
 
 `transfer`
-`address.transfer(amount)`
+`payable(address).transfer(amount)`:这个address需要payable，必须写成payable(address)
 
 
 `revert` :语句用于回滚当前的交易，并返回剩余的 gas,函数会立即终止执行
@@ -196,3 +198,5 @@ address.send(amount）
 
 
 event配emit  error配revert
+
+keccak256(abi.encodePacked(value, fake, secret))
