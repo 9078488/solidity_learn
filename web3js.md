@@ -22,6 +22,11 @@ setAccount(accounts[0]);
 #### 5.
 `contract.methods.auctionEndTime().call(),`
 
+
+
+#### other
+`const weiAmount = web3.utils.toWei(bidAmount, 'ether');`
+
 ### Example
 ```javascript
 import React, { useState, useEffect } from 'react';
