@@ -1,3 +1,5 @@
+> 学习资源
+> https://web3js.readthedocs.io/en/v1.10.0/getting-started.html
 ### Basic
 ##### 1.准备contract address, abi, endpoint
 `window.ethereum`: writeContract时，用`window.ethereum`代替`endpoint`
