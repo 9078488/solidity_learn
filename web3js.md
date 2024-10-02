@@ -21,6 +21,7 @@ setAccount(accounts[0]);
 
 #### 5.
 `contract.methods.auctionEndTime().call(),`
+`const tx = await contract.methods.bid().send({ from: account, value: weiAmount}); `
 
 
 
