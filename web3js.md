@@ -1,5 +1,6 @@
 ### Basic
 ##### 1.准备contract address, abi, endpoint
+`window.ethereum`: writeContract时，用`window.ethereum`代替`endpoint`
 
 ##### 2.安装并importWeb3
 `npm install web3`
