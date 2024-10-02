@@ -193,3 +193,6 @@ address.send(amount）
 
 `toWei`:
 `const weiAmount = web3.utils.toWei(bidAmount, 'ether');`
+
+
+event配emit  error配revert
