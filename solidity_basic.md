@@ -188,3 +188,6 @@ address.send(amount）
 
 `revert` :语句用于回滚当前的交易，并返回剩余的 gas,函数会立即终止执行
 
+
+`toWei`:
+`const weiAmount = web3.utils.toWei(bidAmount, 'ether');`
