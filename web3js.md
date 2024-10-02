@@ -1,4 +1,18 @@
 ### Basic
+##### 1.准备contract address, abi, endpoint
+
+##### 2.安装并importWeb3
+`npm install web3`
+`import Web3 from 'web3';`
+
+#### 3.
+`const web3 = new Web3(endPoint);`
+
+#### 4.
+`const contract = new web3.eth.Contract(abi, contractAddress);`
+
+#### 5.
+`contract.methods.auctionEndTime().call(),`
 
 ### Example
 ```javascript
