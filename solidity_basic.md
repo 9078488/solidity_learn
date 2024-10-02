@@ -42,6 +42,19 @@ contract ZombieFeeding is ZombieFactory {
 function funcName(uint _age) public {
 }
 ```
+
+### payable 是一个修饰符，表示该函数可以接收以太币（ETH）。
+```
+function bid() external  payable  {
+
+}
+```
+### 带returns
+`
+function withdraw() external returns(bool) {
+
+}
+`
 ### 构造函数
 ```solidity
 constructor(bytes32[] memory proposalNames) {
@@ -115,8 +128,12 @@ a.
 
 ### Modifiers
 `pure` 
+
 `view` 
+
 `payable` 
+`payable(address)：`:将address转为payable
+
 `indexed`
 
 ### NatSpec Format
@@ -148,13 +165,26 @@ struct可类似于uint做数据类型
 `Zombie storage myZombie = zombies[_zombieId];`
 `now`
 `uint[]`:数组
+
 event HighestBidIncreased(address bidder, uint amount);
+emit AuctionEnded(highestBidder, highestBid);
 
 error AuctionAlreadyEnded();
 revert AuctionAlreadyEnded();
 
 error BidNotHighEnough(uint highestBid);
+revert BidNotHighEnough(highestBid);
 
 block.timestamp
 
+`send`：返回值是bool类型，标注是否发送成功
+```
+address.send(amount）
+```
+
+`transfer`
+`address.transfer(amount)`
+
+
+`revert` :语句用于回滚当前的交易，并返回剩余的 gas,函数会立即终止执行
 
