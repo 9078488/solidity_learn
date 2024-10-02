@@ -8,13 +8,31 @@
 `import Web3 from 'web3';`
 
 `const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");`
+
 `const web3 = new Web3(window.ethereum);`
 
 `window.ethereum`:Most Ethereum-supported browsers like MetaMask have an EIP-1193 compliant provider available at  `window.ethereum`
 
 
-
 # API Reference
+## web3.eth.Contract
+### new contract
+`new web3.eth.Contract(jsonInterface[, address][, options])`
+
+`const contract = new web3.eth.Contract(abi, contractAddress);`
+### methods.myMethod.call
+`myContract.methods.myMethod([param1[, param2[, ...]]]).call(options [, defaultBlock] [, callback])`
+
+```
+// using the promise
+myContract.methods.myMethod(123).call({from: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe'})
+.then(function(result){
+    ...
+});
+```
+
+`const tx = await contract.methods.bid().send({ from: account, value: weiAmount}); `
+
 ## web3.utils
 ### isAddress
 `web3.utils.isAddress(address)`  return`Boolean`
@@ -23,32 +41,21 @@
 
 `const weiAmount = web3.utils.toWei(bidAmount, 'ether');`
 
-
-### Basic
-##### 1.准备contract address, abi, endpoint
-`window.ethereum`: writeContract时，用`window.ethereum`代替`endpoint`
-
-
-
-#### 3.
-`const web3 = new Web3(endPoint);`
+# 其他
 
 写合约时，需要请求访问账户：
 ```
 // 请求用户授权访问他们的账户
 const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-setAccount(accounts[0]);   
+setAccount(accounts[0]);    // 当前账户
 ```
 
-#### 4.
-`const contract = new web3.eth.Contract(abi, contractAddress);`
-
-#### 5.
-`contract.methods.auctionEndTime().call(),`
-`const tx = await contract.methods.bid().send({ from: account, value: weiAmount}); `
 
 
 
-#### other
+
+
+
+
 
 
