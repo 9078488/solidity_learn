@@ -70,7 +70,11 @@ constructor(bytes32[] memory proposalNames) {
 ## Types
 `uint age = 18;`
 
-`address` `address(0)` `address payable`
+`address`
+
+`address(0)` 
+
+`address payable`：果没有 payable 修饰符，那么该地址变量不能接收以太币，尝试向其发送以太币会导致交易失败。
 
 `bool`
 
@@ -110,7 +114,10 @@ a.
 `keccak256(bytes memory)`
 
 ### Modifiers
-`pure`  `view`  `payable`  `indexed`
+`pure` 
+`view` 
+`payable` 
+`indexed`
 
 ### NatSpec Format
 `@title`:`/// @title A simulator for trees`
@@ -141,5 +148,13 @@ struct可类似于uint做数据类型
 `Zombie storage myZombie = zombies[_zombieId];`
 `now`
 `uint[]`:数组
+event HighestBidIncreased(address bidder, uint amount);
+
+error AuctionAlreadyEnded();
+revert AuctionAlreadyEnded();
+
+error BidNotHighEnough(uint highestBid);
+
+block.timestamp
 
 
