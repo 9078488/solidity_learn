@@ -1,12 +1,19 @@
 > 学习资源
-> https://web3js.readthedocs.io/en/v1.10.0/getting-started.html
+> [https://web3js.readthedocs.io/en/v1.10.0/getting-started.html](https://web3js.readthedocs.io/en/v1.10.0/)
+
+# User Documentation
+## Getting Started
+`npm install web3`
+
+`import Web3 from 'web3';`
+
+`window.ethereum`:
+
 ### Basic
 ##### 1.准备contract address, abi, endpoint
 `window.ethereum`: writeContract时，用`window.ethereum`代替`endpoint`
 
-##### 2.安装并importWeb3
-`npm install web3`
-`import Web3 from 'web3';`
+
 
 #### 3.
 `const web3 = new Web3(endPoint);`
