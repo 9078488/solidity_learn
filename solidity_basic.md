@@ -17,6 +17,9 @@ https://github.com/MaiJiantian/solidityExample
 ## Layout of a Solidity Source File
 
 ## Structure of a Contract
+> 一个contract框架里，先定义上本章节提及的`State Variables`,`Modifiers`,`Events`,`Errors`, `Struct Types`,`Enum Types`
+> 再加上其他章节提及的`mapping`,`数组`
+> function对这些进行处理
 ```solidity
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity >=0.4.0 <0.9.0;
