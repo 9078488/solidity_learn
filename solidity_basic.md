@@ -175,11 +175,81 @@ contract TestToken {
 }
 ```
 
+### Inheritance
+```
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity >=0.7.0 <0.9.0;
 
+contract Base
+{
+    function foo() virtual external view {}
+}
+
+contract Middle is Base {}
+```
+
+### Interfaces
+```
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity >=0.6.2 <0.9.0;
+
+interface Token {
+    enum TokenType { Fungible, NonFungible }
+    struct Coin { string obverse; string reverse; }
+    function transfer(address recipient, uint amount) external;
+}
+```
+
+```
+contract KittyInterface {
+  function getKitty(uint256 _id) external view returns (
+    bool isGestating,
+    bool isReady,
+    uint256 cooldownIndex,
+    uint256 nextActionAt,
+    uint256 siringWithId,
+    uint256 birthTime,
+    uint256 matronId,
+    uint256 sireId,
+    uint256 generation,
+    uint256 genes
+) ;
+}
+```
 
 ## Inline Assembly
 
 ## Cheatsheet
+### Members of address
+`<address payable>.send(uint256 amount)` returns (`bool`): send given amount of Wei to Address, returns false on failure
+
+`<address payable>.transfer(uint256 amount)`: send given amount of Wei to Address, throws on failure
+### Block and Transaction Properties
+`block.timestamp` (`uint`): current block timestamp in seconds since Unix epoch
+
+`msg.sender` (`address`): sender of the message (current call)
+
+`msg.value` (`uint`): number of wei sent with the message
+
+### Mathematical and Cryptographic Function
+`keccak256(bytes memory)` returns (`bytes32`): compute the Keccak-256 hash of the input
+
+### Modifiers
+`pure` for functions: Disallows modification or access of state.
+
+`view` for functions: Disallows modification of state.
+
+`payable` for functions: Allows them to receive Ether together with a call.
+
+```
+```
+function bid() external  payable  {
+
+}
+```
+```
+
+`indexed` for event parameters: Stores the parameter as topic.
 
 
 ## Language Grammar
@@ -241,10 +311,20 @@ contract TestToken {
 
 # Resources
 ## Style Guide
+### Code Layout
+1.`constructor`
+> 构造函数在合约部署时自动执行一次，用于初始化合约的状态变量。
+```
+contract B {
+    constructor(uint) {
+    }
+}
+```
 
 ## Common Patterns
 
 ## Resources
+
 
 ## Contributing
 
