@@ -61,6 +61,63 @@ contract SimpleStorage {
 ```
 
 ## Types
+### Value Types
+1. Booleans
+   
+   `bool`: The possible values are constants `true` and `false`.
+   
+2. Integers
+   
+   `uint
+   
+3. Address
+   `address`: Holds a 20 byte value (size of an Ethereum address).
+   
+   `address payable`: Same as address, but with the additional members `transfer` and `send`.
+   
+    `address(0)`
+   
+5. Fixed-size byte arrays
+   
+   `bytes32`
+
+   `bytes32(0)`:表示一个 32 字节的零值。
+
+6. Enums
+   `enum ActionChoices { GoLeft, GoRight, GoStraight, SitStill }`
+
+7. Function Types
+   `function (<parameter types>) {internal|external} [pure|view|payable] [returns (<return types>)]`
+
+### Reference Types
+1. Data location
+   
+   `memory`, `storage` and `calldata`
+
+2. Arrays
+
+    fixed size：`T[k]`
+
+    dynamic size: `T[]`
+
+    Array Members: `length`, `push(x)`
+
+3. Struct
+   ```
+   struct Funder {
+        address addr;
+        uint amount;
+    }
+   ```
+### Mapping Types
+`mapping(address => uint) public balances;`
+
+### Operators
+`++`, `--`,`**`,`+`,`-`,`*`,`/`,`%`,`&&`,`||`
+   
+### Conversions between Literals and Elementary Types  
+An `addres`s a can be converted explicitly to `address payable` via `payable(a)`
+   
 
 ## Units and Globally Available Variables
 
@@ -113,7 +170,15 @@ contract SimpleStorage {
     }
 ```
 ### Constant and Immutable State Variables
-`block.timestamp`  `address(this).balance`   `block.number`  `msg.value`   msg.sender
+`block.timestamp`
+
+`address(this).balance`
+
+`block.number`
+
+`msg.value`   
+
+`msg.sender`
 
 ### Functions
 1.基本格式
@@ -308,6 +373,7 @@ function bid() external  payable  {
 ## Yul
 
 ## Import Path Resolution
+`import "./someothercontract.sol";`
 
 # Resources
 ## Style Guide
@@ -330,6 +396,9 @@ contract B {
 
 ## Language Influences
 ## Solidity Brand Guide
+
+# 其他
+`now`
 
 
 
