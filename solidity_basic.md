@@ -17,6 +17,47 @@ https://github.com/MaiJiantian/solidityExample
 ## Layout of a Solidity Source File
 
 ## Structure of a Contract
+```solidity
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity >=0.4.0 <0.9.0;
+
+contract SimpleStorage {
+    // State Variables
+    uint storedData;
+
+    // Struct Types
+    struct Voter {
+        uint weight;
+        bool voted;
+        address delegate;
+    }
+
+    // Enum Types
+    enum State { Created, Locked, Inactive } 
+
+    // Modifier
+    modifier onlySeller() { 
+    require(msg.sender == seller);
+    _;
+    }
+
+    // Events
+    event HighestBidIncreased(address bidder, uint amount);
+
+    // Errors
+    error NotEnoughFunds(uint requested, uint available);
+                      
+    // Functions
+    function bid() public onlySeller() {
+        emit HighestBidIncreased(msg.sender, msg.value);
+
+        if (balance < amount)
+            revert NotEnoughFunds(amount, balance);              
+    
+    }
+
+
+```
 
 ## Types
 
