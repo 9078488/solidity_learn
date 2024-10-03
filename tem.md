@@ -1,13 +1,4 @@
-## contract
-### constract-definition
-```solidty
-// SPDX-License-Identifier: GPL-3.0
-pragma solidity >=0.4.16 <0.9.0;
 
-contract contractName {
-
-}
-```
 ### interface
 ```solidity
 contract KittyInterface {
@@ -164,14 +155,9 @@ struct可类似于uint做数据类型
 `now`
 `uint[]`:数组
 
-event HighestBidIncreased(address bidder, uint amount);
-emit AuctionEnded(highestBidder, highestBid);
 
-error AuctionAlreadyEnded();
-revert AuctionAlreadyEnded();
 
-error BidNotHighEnough(uint highestBid);
-revert BidNotHighEnough(highestBid);
+
 
 block.timestamp
 
