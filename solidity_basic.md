@@ -338,6 +338,8 @@ function bid() external  payable  {
 ## Contract Metadata
 
 ## Contract ABI Specification
+### Non-standard Packed Mode
+`keccak256(abi.encodePacked(value, fake, secret))`
 
 # Advisory content
 
