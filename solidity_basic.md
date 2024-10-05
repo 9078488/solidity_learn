@@ -103,6 +103,9 @@ contract SimpleStorage {
    
    `calldata`: `calldata` is somehow similar to `memory`, but it's only available to `external` functions.
 
+ > 选择使用 `calldata` 还是 `memory` 取决于你的具体需求。如果你不需要修改数据，并且希望节省 gas，那么使用 `calldata` 是一个不错的选择。
+
+
    如果不声明，默认值如下：
    
    状态变量（State Variables）： `storage`
