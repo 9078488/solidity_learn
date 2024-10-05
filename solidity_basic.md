@@ -68,9 +68,10 @@ contract SimpleStorage {
    
 2. Integers
    
-   `uint
+   `uint`
+   `uint x = 16;`
    
-3. Address
+4. Address
    `address`: Holds a 20 byte value (size of an Ethereum address).
    
    `address payable`: Same as address, but with the additional members `transfer` and `send`.
