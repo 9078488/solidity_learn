@@ -406,7 +406,7 @@ contract B {
 `string` 做函数参数，要加`memory`
 
 
-
+It's convention to start `private` function names with an underscore (`_`).
 
 
 
