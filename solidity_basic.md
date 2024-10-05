@@ -86,10 +86,11 @@ contract SimpleStorage {
 
    `bytes32(0)`:表示一个 32 字节的零值。
 
-6. Enums
+
+7. Enums
    `enum ActionChoices { GoLeft, GoRight, GoStraight, SitStill }`
 
-7. Function Types
+8. Function Types
    `function (<parameter types>) {internal|external} [pure|view|payable] [returns (<return types>)]`
 
    > Let's make it an `external view` function, so we can call it from web3.js without needing any gas
@@ -122,6 +123,11 @@ contract SimpleStorage {
     fixed size：`T[k]`
 
     dynamic size: `T[]`
+   
+    `uint[3] storage values; `
+
+    `uint[] memory values = new uint[](3);` // memory中必须用 `new`，不能`uint[3] values`
+
 
     Array Members:
 
@@ -129,7 +135,7 @@ contract SimpleStorage {
 
    `push(x)`:返回值是新数组的长度
 
-4. Struct
+5. Struct
    ```
    struct Funder {
         address addr;
