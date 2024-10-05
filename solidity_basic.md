@@ -215,7 +215,7 @@ contract SimpleStorage {
     }
 ```
 ### Constant and Immutable State Variables
-`block.timestamp`
+`block.timestamp`: 原来是`now`，新版本用`block.timestamp`替代`now`
 
 `address(this).balance`
 
@@ -445,11 +445,6 @@ contract B {
 ## Solidity Brand Guide
 
 # 其他
-`now`
-
-`string` 做函数参数，要加`memory`
-
-
 It's convention to start `private` function names with an underscore (`_`).
 
 
