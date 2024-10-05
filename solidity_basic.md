@@ -177,6 +177,17 @@ assert(1 ether == 1e18);
 1 weeks == 7 days
 ```
 
+### Special Variables and Functions
+1.Members of Address Types
+
+`<address>.balance (uint256)`
+
+`<address payable>.transfer(uint256 amount)`
+
+`<address payable>.send(uint256 amount) returns (bool)`
+
+`address(this).balance`: `this.balance`已被替代
+
 ## Expressions and Control Structures
 There is: `if`, `else`, `while`, `do`, `for`, `break`, `continue`, `return`, with the usual semantics known from C or JavaScript.
 
