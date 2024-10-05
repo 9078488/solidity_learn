@@ -403,6 +403,8 @@ contract B {
 # 其他
 `now`
 
+`string` 做函数参数，要加`memory`
+
 
 
 
