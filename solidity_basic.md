@@ -93,9 +93,24 @@ contract SimpleStorage {
 ### Reference Types
 1. Data location
    
-   `memory`, `storage` and `calldata`
+   `memory`: 这种写法适用于只需要读取数据而不需要修改存储中的数据的情况
+   
+   `storage`:存储在区块链上的持久化数据，这种写法适用于需要直接修改存储中的数据的情况
+   
+   `calldata`:
 
-2. Arrays
+   如果不声明，默认值如下：
+   
+   状态变量（State Variables）： `storage`
+
+   局部变量（Local Variables）： `memory`
+
+   函数参数（Function Parameters）： a.external :`calldata`, b.internal or public: `memory`
+
+   > `string` 类型是动态大小的数据类型，适合存储在 `memory` 中。
+   > `array`,`struct`数据太大了，最好显式声明以减少gas的小号
+
+3. Arrays
 
     fixed size：`T[k]`
 
