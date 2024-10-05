@@ -144,6 +144,27 @@ An `addres`s a can be converted explicitly to `address payable` via `payable(a)`
    
 
 ## Units and Globally Available Variables
+### Ether Units
+`wei`, `gwei` or `ether`
+
+```
+assert(1 wei == 1);
+assert(1 gwei == 1e9);
+assert(1 ether == 1e18);
+```
+
+### Time Units
+```
+1 == 1 seconds
+
+1 minutes == 60 seconds
+
+1 hours == 60 minutes
+
+1 days == 24 hours
+
+1 weeks == 7 days
+```
 
 ## Expressions and Control Structures
 There is: `if`, `else`, `while`, `do`, `for`, `break`, `continue`, `return`, with the usual semantics known from C or JavaScript.
