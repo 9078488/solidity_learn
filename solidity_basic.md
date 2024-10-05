@@ -101,7 +101,7 @@ contract SimpleStorage {
    
    `storage`:存储在区块链上的持久化数据，这种写法适用于需要直接修改存储中的数据的情况
    
-   `calldata`:
+   `calldata`: `calldata` is somehow similar to `memory`, but it's only available to `external` functions.
 
    如果不声明，默认值如下：
    
