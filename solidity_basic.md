@@ -101,9 +101,13 @@ contract SimpleStorage {
 
     dynamic size: `T[]`
 
-    Array Members: `length`, `push(x)`
+    Array Members:
 
-3. Struct
+   `length`
+
+   `push(x)`:返回值是新数组的长度
+
+4. Struct
    ```
    struct Funder {
         address addr;
