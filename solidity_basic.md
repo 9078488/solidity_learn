@@ -90,6 +90,8 @@ contract SimpleStorage {
 7. Function Types
    `function (<parameter types>) {internal|external} [pure|view|payable] [returns (<return types>)]`
 
+   > 
+
 ### Reference Types
 1. Data location
    
@@ -168,7 +170,7 @@ Solidity also supports exception handling in the form of `try/catch`-statements,
    
    `internal`：`private` + 继承它的合约中被调用
    
-   `external`：仅合约外部可访问
+   `external`：仅合约外部可访问，比 `public`省gas
    
 5. Getter Functions
    The compiler automatically creates getter functions for all `public` `state variables`
