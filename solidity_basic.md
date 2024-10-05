@@ -70,6 +70,8 @@ contract SimpleStorage {
    
    `uint`
    `uint x = 16;`
+
+    `uint32`
    
 4. Address
    `address`: Holds a 20 byte value (size of an Ethereum address).
