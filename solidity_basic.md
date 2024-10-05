@@ -92,7 +92,7 @@ contract SimpleStorage {
 7. Function Types
    `function (<parameter types>) {internal|external} [pure|view|payable] [returns (<return types>)]`
 
-   > 
+   > Let's make it an `external view` function, so we can call it from web3.js without needing any gas
 
 ### Reference Types
 1. Data location
