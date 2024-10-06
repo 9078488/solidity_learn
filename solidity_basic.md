@@ -353,6 +353,32 @@ contract KittyInterface {
 }
 ```
 
+### Libraries
+```
+library BigInt {
+    function fromUint(uint x) internal pure returns (bigint memory r) {
+        r.limbs = new uint[](1);
+        r.limbs[0] = x;
+    }
+)
+```
+
+
+`use...for...`
+
+```
+contract C {
+    using BigInt for bigint;
+
+    function f() public pure {
+        bigint memory x = BigInt.fromUint(7);
+        bigint memory y = BigInt.fromUint(type(uint).max);
+        bigint memory z = x.add(y);
+        assert(z.limb(1) > 0);
+    }
+}
+```
+
 ## Inline Assembly
 
 ## Cheatsheet
@@ -473,5 +499,8 @@ contract B {
 # 其他
 It's convention to start `private` function names with an underscore (`_`).
 
+## ERC721
+需要用ERC721的interface，里面内容根据实际写
+https://ethereum.org/en/developers/docs/standards/tokens/erc-721/
 
 
