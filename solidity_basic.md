@@ -1,5 +1,7 @@
 https://cryptozombies.io/en/lesson/3/chapter/11
 
+https://ethereum.org/en/developers/docs/standards/tokens/erc-721/
+
 https://github.com/MaiJiantian/solidityExample
 
 官方教程的example已学完Simple Open Auction
