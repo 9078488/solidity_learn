@@ -68,10 +68,12 @@ contract SimpleStorage {
    
 2. Integers
    
-   `uint`
+   `uint`:实际是`uint256`
    `uint x = 16;`
 
-    `uint32`
+   `uint32`
+
+   `uint16`
    
 4. Address
    `address`: Holds a 20 byte value (size of an Ethereum address).
@@ -317,7 +319,7 @@ contract Base
     function foo() virtual external view {}
 }
 
-contract Middle is Base {}
+contract Middle is Base, Base1 {}
 ```
 
 ### Interfaces
