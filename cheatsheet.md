@@ -1,6 +1,6 @@
-`contract`: 
+`contract`
 
-写一个contract框架，包含Lisence, pragma, contract框架
+
 
 **Value Types**: 
 
