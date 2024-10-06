@@ -98,6 +98,8 @@ contract SimpleStorage {
 7. Enums
    `enum ActionChoices { GoLeft, GoRight, GoStraight, SitStill }`
 
+> enum 不能配 `public`之类的标识符
+
 8. Function Types
    `function (<parameter types>) {internal|external} [pure|view|payable] [returns (<return types>)]`
 
