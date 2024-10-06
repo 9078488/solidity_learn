@@ -198,13 +198,18 @@ There is: `if`, `else`, `while`, `do`, `for`, `break`, `continue`, `return`, wit
 Solidity also supports exception handling in the form of `try/catch`-statements, but only for external function calls and contract creation calls. Errors can be created using the revert statement.
 
 ### Error handling: Assert, Require, Revert and Exceptions
-1.`require`
+1.`assert`
+`assert(c >= a);`
+
+2.`require`
 `require(msg.value % 2 == 0, "Even value required.");`
 `require(msg.value % 2 == 0);`
 
-2.`revert`
+3.`revert`
 `revert`:语句用于回滚当前的交易，并返回剩余的 gas,函数会立即终止执行
 `revert NotEnoughFunds(amount, balance);` 
+
+
 
 ## Contracts
 ### Visibility and Getters
