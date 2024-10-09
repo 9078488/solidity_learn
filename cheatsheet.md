@@ -1,9 +1,6 @@
 `contract`
 
-
-
 **Value Types**: 
-
 `bool`
 
 (`uint`,`uint32`,`uint16`)
@@ -13,3 +10,8 @@
 (`bytes32`, `bytes32(0)`)
 
 `enum`
+
+**Reference Types**
+`struct`
+
+`T[k]`, `T[]`
