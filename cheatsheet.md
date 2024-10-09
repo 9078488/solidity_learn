@@ -16,7 +16,7 @@
 
 `struct`
 
-`T[k]`, `T[]`
+`T[]`
 
 **Mapping Types**
 
