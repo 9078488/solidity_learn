@@ -16,7 +16,7 @@
 
 `struct`
 
-`T[]`
+`T[]` `push()`
 
 **Mapping Types**
 
