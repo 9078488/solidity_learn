@@ -1,35 +1,35 @@
-`contract`
+```
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.8.0 < 0.9.0;
 
-`function`
+contract {
+  uint
+  uint32
+  uint16
+  bool
+  address
+  address payable
+  bytes32
+  enum
 
-`constructor`
+  struct
+  uint[]
 
-`modifier`
+  mapping
 
-`event`
+  modifier
 
-`error`
+  event
+  error
 
-**Value Types**: 
+  constructor
 
-`bool`
+  function function_name(uint function_parameter) [public | external | internal | private] [pure | view] returns(uint) {
+    emit event
+    revert error
 
-(`uint`,`uint32`,`uint16`)
+  }  
+}
 
-(`address`, `address(0)`, `address payable` `payable(address)`)
-
-(`bytes32`, `bytes32(0)`)
-
-`enum`
-
-**Reference Types**
-
-`struct`
-
-`T[]` `push()`
-
-**Mapping Types**
-
-`mapping`
-
+```
 
