@@ -1,5 +1,13 @@
 `contract`
 
+`function`
+
+`modifier`
+
+`event`
+
+`error`
+
 **Value Types**: 
 
 `bool`
@@ -21,3 +29,5 @@
 **Mapping Types**
 
 `mapping`
+
+
