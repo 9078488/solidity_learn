@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.8.0 < 0.9.0;
 
-contract {
+contract A is B {
   uint
   uint32
   uint16
@@ -24,10 +24,9 @@ contract {
 
   constructor
 
-  function function_name(uint function_parameter) [public | external | internal | private] [pure | view] returns(uint) {
+  function function_name(uint function_parameter) [public | external | internal | private] [pure | view | payable] returns(uint) {
     emit event
     revert error
-
   }  
 }
 
