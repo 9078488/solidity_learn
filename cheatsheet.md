@@ -2,6 +2,8 @@
 
 `function`
 
+`constructor`
+
 `modifier`
 
 `event`
