@@ -349,7 +349,7 @@ contract Inherited is Base
 {
     modifier foo() override {_;}
 }
-``
+```
 
 ### Abstract Contracts
 > 如果一个合约继承了抽象合约，但没有实现所有未实现的函数，那么这个合约也必须被标记为抽象合约。
