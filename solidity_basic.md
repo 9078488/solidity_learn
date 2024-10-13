@@ -6,8 +6,6 @@ https://github.com/MaiJiantian/solidityExample
 
 https://github.com/manojpramesh/solidity-cheatsheet
 
-https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/IERC20.sol
-
 官方教程的example已学完Simple Open Auction
 
 # Basics
@@ -576,8 +574,12 @@ contract B {
 # 其他
 It's convention to start `private` function names with an underscore (`_`).
 
+Solidity 0.8.0 引入了内置的算术溢出检查机制，使得 SafeMath 库变得不再必要。开发者可以直接使用 Solidity 的算术操作符，而不需要额外的库来防止溢出和下溢问题。
+
 ## ERC721
 需要用ERC721的interface，里面内容根据实际写
 https://ethereum.org/en/developers/docs/standards/tokens/erc-721/
 
+## IERC20
+https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/IERC20.sol
 
