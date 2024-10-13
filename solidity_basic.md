@@ -219,11 +219,11 @@ Solidity also supports exception handling in the form of `try/catch`-statements,
 
 ## Contracts
 ### Visibility and Getters
-1. State Variable Visibility
+#### 1.State Variable Visibility
    `public`, `internal`, `private`
    > `private`:合约内部，`internal`：合约内部 + 子合约
 
-3. Function Visibility
+#### 2.Function Visibility
    `public`：自动生成 getter 函数
    
    `private`：只能在定义它的合约内部被调用,函数名前面一般加 `_`
@@ -232,7 +232,7 @@ Solidity also supports exception handling in the form of `try/catch`-statements,
    
    `external`：仅合约外部可访问，比 `public`省gas
    
-5. Getter Functions
+3. Getter Functions
    The compiler automatically creates getter functions for all `public` `state variables`
 ### Function Modifiers
 ```solidity
@@ -334,6 +334,22 @@ contract Base
 
 contract Middle is Base, Base1 {}
 ```
+#### Modifier Overriding
+> `vitural` & `override`
+```
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity >=0.6.0 <0.9.0;
+
+contract Base
+{
+    modifier foo() virtual {_;}
+}
+
+contract Inherited is Base
+{
+    modifier foo() override {_;}
+}
+``
 
 ### Abstract Contracts
 > 如果一个合约继承了抽象合约，但没有实现所有未实现的函数，那么这个合约也必须被标记为抽象合约。
