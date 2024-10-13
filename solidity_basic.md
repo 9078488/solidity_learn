@@ -363,6 +363,18 @@ contract KittyInterface {
 ) ;
 }
 ```
+### Abstract Contracts
+> 如果一个合约继承了抽象合约，但没有实现所有未实现的函数，那么这个合约也必须被标记为抽象合约。
+```
+abstract contract Feline {
+    function utterance() public pure virtual returns (bytes32);
+}
+
+abstract contract Lion is Feline {
+    // Lion 没有实现 utterance 函数，因此它也必须是抽象的
+}
+```
+> 
 
 ### Libraries
 ```
