@@ -6,6 +6,8 @@ https://github.com/MaiJiantian/solidityExample
 
 https://github.com/manojpramesh/solidity-cheatsheet
 
+https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/IERC20.sol
+
 官方教程的example已学完Simple Open Auction
 
 # Basics
@@ -398,6 +400,7 @@ contract MyContract is Context {
 ```
 
 ### Interfaces
+> `interface`里的`function`必须都是`external`
 ```
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity >=0.6.2 <0.9.0;
