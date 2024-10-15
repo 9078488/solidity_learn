@@ -589,9 +589,9 @@ https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/tok
 
 https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Context.sol 已学习
 
-https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/extensions/IERC20Metadata.sol
+https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/extensions/IERC20Metadata.sol 已学习
 
-https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/interfaces/draft-IERC6093.sol    `import {IERC20Errors}`
+https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/interfaces/draft-IERC6093.sol    `import {IERC20Errors}` 已学习
 
 
 https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol
