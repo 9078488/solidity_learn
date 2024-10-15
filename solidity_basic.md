@@ -492,6 +492,7 @@ function bid() external  payable  {
 
 
 ## Language Grammar
+`unchecked` : unchecked-block
 
 # Compiler
 ## Using the Compiler
