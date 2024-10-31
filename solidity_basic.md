@@ -604,7 +604,9 @@ https://ethereum.org/en/developers/docs/standards/tokens/erc-721/
 
 ## ERC20
 > https://eips.ethereum.org/EIPS/eip-20
-> 3可选，6必须，2event，其余的均为拓展
+> https://www.alchemy.com/overviews/erc20-solidity
+> 3可选(配3变量)，6必须，2event，其余的均为拓展
+> 2 mapping 
 
 https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Context.sol
 
