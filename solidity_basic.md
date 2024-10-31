@@ -66,6 +66,8 @@ contract SimpleStorage {
 
 ## Types
 ### Value Types
+> `value type`: marked as `constant`
+> `string constant TEXT = "abc";`
 1. Booleans
    
    `bool`: The possible values are constants `true` and `false`.
