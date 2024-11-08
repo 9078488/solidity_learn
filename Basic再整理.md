@@ -151,3 +151,31 @@ contract Purchase {
     enum State { Created, Locked, Inactive } // Enum
 }
 ```
+
+## Types
+
+### Value Types
+#### Booleans
+`bool`: `true`  `false`
+
+#### Integers
+- `uint`: `uint256`
+- `uint8`
+#### Fixed Point Numbers
+#### Address
+#### Contract Types
+#### Fixed-size byte arrays
+#### Address Literals
+#### Rational and Integer Literals
+#### String Literals and Types
+#### Unicode Literals
+#### Hexadecimal Literals
+#### Enums
+#### User-defined Value Types
+#### Function Types
+
+### Reference Types
+### Mapping Types
+### Operators
+### Conversions between Elementary Types
+### Conversions between Literals and Elementary Types
