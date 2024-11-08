@@ -218,7 +218,70 @@ String literals are written with either double or single-quotes ("foo" or 'bar')
 `function (<parameter types>) {public|external|internal|private|} [pure|view|payable] [returns (<return types>)]`
 
 ### Reference Types
+#### Data location
+`memory`: 这种写法适用于只需要读取数据而不需要修改存储中的数据的情况
+
+`storage`: 存储在区块链上的持久化数据，这种写法适用于需要直接修改存储中的数据的情况
+
+`calldata`: `calldata` is somehow similar to `memory`, but it's only available to `external` functions.
+
+> 选择使用 `calldata` 还是 `memory` 取决于你的具体需求。如果你不需要修改数据，并且希望节省 gas，那么使用 `calldata` 是一个不错的选择
+
+如果不声明，默认值如下：
+
+状态变量（State Variables）： storage
+
+局部变量（Local Variables）： memory
+
+函数参数（Function Parameters）： a.external :calldata, b.internal or public: memory
+
+> `string` 类型是动态大小的数据类型，适合存储在 `memory` 中。 `array`,`struct`数据太大了，最好显式声明以减少gas的消耗
+
+#### Arrays
+
+fixed size：`T[k]`
+
+dynamic size: `T[]`
+
+`uint[3] storage values; `
+
+`uint[] memory values = new uint[](3);` // memory中必须用 `new`，不能`uint[3] values`
+
+
+Array Members:
+
+`length`
+
+`push(x)`:返回值是新数组的长度
+
+#### Array Slices
+略...
+
+#### Structs
+```
+struct Campaign {
+    address payable beneficiary;
+    uint fundingGoal;
+    uint numFunders;
+    uint amount;
+    mapping(uint => Funder) funders;
+}
+```
+
 ### Mapping Types
+```
+mapping(address => uint256) private _balances;
+mapping(address => mapping(address => uint256)) private _allowances;
+```
+
 ### Operators
+`++`, `--`,`**`,`+`,`-`,`*`,`/`,`%`,`&&`,`||`
+
 ### Conversions between Elementary Types
+```
+int  y = -3;
+uint x = uint(y);
+```
+
 ### Conversions between Literals and Elementary Types
+略...
