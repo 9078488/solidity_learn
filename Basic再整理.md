@@ -116,5 +116,38 @@ contract SimpleAuction {
 }
 ```
 ### Errors
+> `error` + `revert`
+```
+error NotEnoughFunds(uint requested, uint available);
+
+contract Token {
+    mapping(address => uint) balances;
+    function transfer(address to, uint amount) public {
+        uint balance = balances[msg.sender];
+        if (balance < amount)
+            revert NotEnoughFunds(amount, balance);
+        balances[msg.sender] -= amount;
+        balances[to] += amount;
+        // ...
+    }
+}
+```
+
 ### Struct Types
+```
+contract Ballot {
+    struct Voter { // Struct
+        uint weight;
+        bool voted;
+        address delegate;
+        uint vote;
+    }
+}
+```
+
 ### Enum Types
+```
+contract Purchase {
+    enum State { Created, Locked, Inactive } // Enum
+}
+```
