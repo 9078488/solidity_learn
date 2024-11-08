@@ -161,8 +161,19 @@ contract Purchase {
 #### Integers
 - `uint`: `uint256`
 - `uint8`
+- `uint16`
+
 #### Fixed Point Numbers
+略...
+
 #### Address
+- `address`: Holds a 20 byte value (size of an Ethereum address).
+- `address payable`: Same as `address`, but with the additional members `transfer` and `send`
+-  Type conversions:
+--  Implicit conversions from `address payable` to `address` are allowed
+--  whereas conversions from `address` to `address payable` must be explicit via `payable(<address>)`.
+--  `address payable _owner = address(uint160(owner()));` //owner()返回的类型是`address`，但是不能直接赋值给`address payable`
+   
 #### Contract Types
 #### Fixed-size byte arrays
 #### Address Literals
