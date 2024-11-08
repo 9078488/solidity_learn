@@ -178,17 +178,44 @@ whereas conversions from `address` to `address payable` must be explicit via `pa
 `address payable _owner = address(uint160(owner()));` //owner()返回的类型是`address`，但是不能直接赋值给`address payable`
 
 - address(0)
+- Members of Addresses: `balance` and `transfer`
+```
+address payable x = payable(0x123);
+address myAddress = address(this);
+if (x.balance < 10 && myAddress.balance >= 10) x.transfer(10);
+```
    
 #### Contract Types
+略...
+
 #### Fixed-size byte arrays
+`bytes32`
+
+`bytes32(0)`:表示一个 32 字节的零值。
+
 #### Address Literals
+`0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF`
+
 #### Rational and Integer Literals
+略...
+
 #### String Literals and Types
+String literals are written with either double or single-quotes ("foo" or 'bar')
+
 #### Unicode Literals
+`string memory a = unicode"Hello 😃";`
+
 #### Hexadecimal Literals
+略...
+
 #### Enums
+`enum ActionChoices { GoLeft, GoRight, GoStraight, SitStill }`
+
 #### User-defined Value Types
+略...
+
 #### Function Types
+`function (<parameter types>) {public|external|internal|private|} [pure|view|payable] [returns (<return types>)]`
 
 ### Reference Types
 ### Mapping Types
