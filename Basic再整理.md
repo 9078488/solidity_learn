@@ -50,4 +50,25 @@
 ### Important Information About Versioning
 略...
 
+# Language Description
 
+## Layout of a Solidity Source File
+
+### SPDX License Identifier
+`// SPDX-License-Identifier: MIT`
+
+### Pragmas
+`pragma solidity ^0.8.20;`
+
+### Importing other Source Files
+`import {Contant} from "./facther.sol";`
+
+### Comments
+```
+// This is a single-line comment.
+
+/*
+This is a
+multi-line comment.
+*/
+```
