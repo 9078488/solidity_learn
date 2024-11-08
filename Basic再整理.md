@@ -72,3 +72,49 @@ This is a
 multi-line comment.
 */
 ```
+
+## Structure of a Contract
+
+### State Variables
+```
+contract SimpleStorage {
+    uint storedData; // State variable
+}
+```
+
+### Functions
+```
+contract SimpleAuction {
+    function bid() public payable { // Function
+    }
+}
+```
+
+### Function Modifiers
+```
+contract Purchase {
+    modifier onlySeller() { // Modifier
+        require(
+            msg.sender == address(0),
+            "Only address(0) can call this."
+        );
+        _;
+    }
+}
+```
+
+### Events
+> `event`  +   `emit`
+```
+event HighestBidIncreased(address bidder, uint amount); // Event
+
+contract SimpleAuction {
+    function bid() public payable {
+        // ...
+        emit HighestBidIncreased(msg.sender, msg.value); // Triggering event
+    }
+}
+```
+### Errors
+### Struct Types
+### Enum Types
