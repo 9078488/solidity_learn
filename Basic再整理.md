@@ -285,3 +285,26 @@ uint x = uint(y);
 
 ### Conversions between Literals and Elementary Types
 略...
+
+## Units and Globally Available Variables
+
+### Ether Units
+- `wei`: `wei` 是以太币的最小单位
+- `gwei`: 1 `gwei` == 1e9 `wei`
+- `ether`: 1 `ether` == 1e18 `wei`
+
+### Time Units
+```
+1 == 1 seconds
+
+1 minutes == 60 seconds
+
+1 hours == 60 minutes
+
+1 days == 24 hours
+
+1 weeks == 7 days
+```
+
+### Special Variables and Functions
+### Reserved Keywords
