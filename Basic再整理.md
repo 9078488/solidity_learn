@@ -309,6 +309,13 @@ uint x = uint(y);
 ### Special Variables and Functions
 
 #### Block and Transaction Properties
+- `block.timestamp` (`uint`): current block timestamp as seconds since unix epoch
+- `msg.data` (`bytes calldata`): complete calldata
+- `msg.sender` (`address`): sender of the message (current call)
+- `msg.value` (`uint`): number of wei sent with the message
+
+
+
 #### ABI Encoding and Decoding Functions
 #### Members of bytes
 #### Members of string
