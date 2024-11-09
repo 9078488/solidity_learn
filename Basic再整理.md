@@ -314,15 +314,35 @@ uint x = uint(y);
 - `msg.sender` (`address`): sender of the message (current call)
 - `msg.value` (`uint`): number of wei sent with the message
 
-
-
 #### ABI Encoding and Decoding Functions
+- `abi.encodePacked(...) returns (bytes memory)`
+
 #### Members of bytes
-#### Members of string
+略...
+
+#### Members of string
+略...
+
 #### Error Handling
+- `assert(bool condition)`
+- `require(bool condition)`
+- `require(bool condition, string memory message)`
+- `revert()`
+- `revert(string memory reason)`
+
 #### Mathematical and Cryptographic Functions
+- `keccak256(bytes memory) returns (bytes32)`: compute the Keccak-256 hash of the input
+
 #### Members of Address Types
+- `<address>.balance (uint256)`: balance of the Address in Wei
+- `<address payable>.transfer(uint256 amount)`
+- `<address payable>.send(uint256 amount) returns (bool)`
+
 #### Contract-related
+略...
+
 #### Type Information
+- `type(T).min`
+- `type(T).max`
 
 ### Reserved Keywords
