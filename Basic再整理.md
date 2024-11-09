@@ -346,3 +346,55 @@ uint x = uint(y);
 - `type(T).max`
 
 ### Reserved Keywords
+略...
+
+## Expressions and Control Structures
+### Control Structures
+There is: `if`, `else`, `while`, `do`, `for`, `break`, `continue`, `return`, with the usual semantics known from C or JavaScript.
+
+Solidity also supports exception handling in the form of `try/catch`-statements, but only for external function calls and contract creation calls. Errors can be created using the revert statement.
+
+
+### Function Calls
+#### Internal Function Calls
+略...
+
+#### External Function Calls
+略...
+
+#### Function Calls with Named Parameters
+略...
+
+#### Omitted Names in Function Definitions
+略...
+
+### Creating Contracts via new
+略...
+
+### Order of Evaluation of Expressions
+略...
+
+### Assignment
+略...
+
+### Scoping and Declarations
+略...
+
+### Checked or Unchecked Arithmetic
+```
+contract C {
+    function f(uint a, uint b) pure public returns (uint) {
+        // This subtraction will wrap on underflow.
+        unchecked { return a - b; }
+    }
+    function g(uint a, uint b) pure public returns (uint) {
+        // This subtraction will revert on underflow.
+        return a - b;
+    }
+}
+```
+
+### Error handling: Assert, Require, Revert and Exceptions
+#### Panic via assert and Error via require
+#### revert
+#### try/catch
