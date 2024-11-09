@@ -396,5 +396,138 @@ contract C {
 
 ### Error handling: Assert, Require, Revert and Exceptions
 #### Panic via assert and Error via require
+略...
+
 #### revert
-#### try/catch
+略...
+
+#### try/catch
+略...
+
+## Contracts
+### Creating Contracts
+略...
+
+### Visibility and Getters
+#### State Variable Visibility
+-  `public` : automatically generates `getter` functions for them
+-  `internal`
+-  `private`
+
+#### Function Visibility
+-  `external`
+-  `public`
+-  `internal`
+-  `private`
+
+#### Getter Functions
+略...
+
+### Function Modifiers
+- 不带参数
+```
+contract owned {
+    constructor() { owner = payable(msg.sender); }
+    address payable owner;
+
+    // This contract only defines a modifier but does not use
+    // it: it will be used in derived contracts.
+    // The function body is inserted where the special symbol
+    // `_;` in the definition of a modifier appears.
+    // This means that if the owner calls this function, the
+    // function is executed and otherwise, an exception is
+    // thrown.
+    modifier onlyOwner {
+        require(
+            msg.sender == owner,
+            "Only owner can call this function."
+        );
+        _;
+    }
+}
+```
+- 带参数
+```
+contract priced {
+    // Modifiers can receive arguments:
+    modifier costs(uint price) {
+        if (msg.value >= price) {
+            _;
+        }
+    }
+}
+```
+
+### Transient Storage
+略...
+
+### Composability of Smart Contracts and the Caveats of Transient Storage
+略...
+
+### Constant and Immutable State Variables
+> State variables can be declared as `constant` or `immutable`. In both cases, the variables cannot be modified after the contract has been constructed. For `constant` variables, the value has to be fixed at compile-time, while for `immutable`, it can still be assigned at construction time.
+
+```
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.8.21;
+
+uint constant X = 32**22 + 8;
+
+contract C {
+    string constant TEXT = "abc";
+    bytes32 constant MY_HASH = keccak256("abc");
+    uint immutable decimals = 18;
+    uint immutable maxBalance;
+    address immutable owner = msg.sender;
+
+    constructor(uint decimals_, address ref) {
+        if (decimals_ != 0)
+            // Immutables are only immutable when deployed.
+            // At construction time they can be assigned to any number of times.
+            decimals = decimals_;
+
+        // Assignments to immutables can even access the environment.
+        maxBalance = ref.balance;
+    }
+
+    function isBalanceTooHigh(address other) public view returns (bool) {
+        return other.balance > maxBalance;
+    }
+}
+```
+
+### Functions
+#### Function Parameters and Return Variables
+略...
+
+#### State Mutability
+- View Functions
+- Pure Functions
+
+#### Special Functions
+略...
+
+#### Function Overloading
+```
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity >=0.4.16 <0.9.0;
+
+contract A {
+    function f(uint value) public pure returns (uint out) {
+        out = value;
+    }
+
+    function f(uint value, bool really) public pure returns (uint out) {
+        if (really)
+            out = value;
+    }
+}
+```
+
+### Events
+### Custom Errors
+### Inheritance
+### Abstract Contracts
+### Interfaces
+### Libraries
+### Using For
