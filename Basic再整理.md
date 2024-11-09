@@ -307,4 +307,15 @@ uint x = uint(y);
 ```
 
 ### Special Variables and Functions
+
+#### Block and Transaction Properties
+#### ABI Encoding and Decoding Functions
+#### Members of bytes
+#### Members of string
+#### Error Handling
+#### Mathematical and Cryptographic Functions
+#### Members of Address Types
+#### Contract-related
+#### Type Information
+
 ### Reserved Keywords
