@@ -209,6 +209,8 @@ String literals are written with either double or single-quotes ("foo" or 'bar')
 略...
 
 #### Enums
+> enum 不能配 `public`之类的标识符
+
 `enum ActionChoices { GoLeft, GoRight, GoStraight, SitStill }`
 
 #### User-defined Value Types
@@ -284,7 +286,7 @@ uint x = uint(y);
 ```
 
 ### Conversions between Literals and Elementary Types
-略...
+An `addres`s a can be converted explicitly to `address payable` via `payable(a)`
 
 ## Units and Globally Available Variables
 
@@ -307,7 +309,6 @@ uint x = uint(y);
 ```
 
 ### Special Variables and Functions
-
 #### Block and Transaction Properties
 - `block.timestamp` (`uint`): current block timestamp as seconds since unix epoch
 - `msg.data` (`bytes calldata`): complete calldata
@@ -335,6 +336,7 @@ uint x = uint(y);
 
 #### Members of Address Types
 - `<address>.balance (uint256)`: balance of the Address in Wei
+- `address(this).balance`: `this.balance`已被替代
 - `<address payable>.transfer(uint256 amount)`
 - `<address payable>.send(uint256 amount) returns (bool)`
 
@@ -396,10 +398,13 @@ contract C {
 
 ### Error handling: Assert, Require, Revert and Exceptions
 #### Panic via assert and Error via require
-略...
+-  `assert(c >= a);`
+-  `require(msg.value % 2 == 0, "Even value required.");`
+-  `require(msg.value % 2 == 0);`
 
 #### revert
-略...
+-  `revert`:语句用于回滚当前的交易，并返回剩余的 gas,函数会立即终止执行
+-  `revert NotEnoughFunds(amount, balance);` 
 
 #### try/catch
 略...
@@ -415,13 +420,13 @@ contract C {
 -  `private`
 
 #### Function Visibility
--  `external`
--  `public`
--  `internal`
--  `private`
+-  `external`: 仅合约外部可访问，比 `public`省gas
+-  `public`: 自动生成 getter 函数
+-  `internal`: `private` + 继承它的合约中被调用
+-  `private`: 只能在定义它的合约内部被调用,函数名前面一般加 `_`
 
 #### Getter Functions
-略...
+The compiler automatically creates getter functions for all `public` `state variables`
 
 ### Function Modifiers
 - 不带参数
@@ -557,6 +562,7 @@ error InsufficientBalance(uint256 available, uint256 required);
 
 contract TestToken {
     mapping(address => uint) balance;
+    // 方式1
     function transferWithRevertError(address to, uint256 amount) public {
         if (amount > balance[msg.sender])
             revert InsufficientBalance({
@@ -566,6 +572,7 @@ contract TestToken {
         balance[msg.sender] -= amount;
         balance[to] += amount;
     }
+    // 方式2
     function transferWithRequireError(address to, uint256 amount) public {
         require(amount <= balance[msg.sender], InsufficientBalance(balance[msg.sender], amount));
         balance[msg.sender] -= amount;
@@ -679,6 +686,7 @@ contract C is A, X {}
 略...
 
 ### Abstract Contracts
+> 如果一个合约继承了抽象合约，但没有实现所有未实现的函数，那么这个合约也必须被标记为抽象合约。
 ```
 abstract contract Feline {
     function utterance() public pure virtual returns (bytes32);
@@ -690,6 +698,8 @@ contract Cat is Feline {
 ```
 
 ### Interfaces
+>  `interface`里的`function`必须都是`external`
+>   也可用`contract`关键字定义`interfac`
 ```
 interface Token {
     enum TokenType { Fungible, NonFungible }
@@ -779,6 +789,7 @@ contract C {
 
 ## Cheatsheet
 ### Order of Precedence of Operators
+略...
 
 ### ABI Encoding and Decoding Functions
 `abi.encodePacked(...) returns (bytes memory)`
@@ -787,10 +798,13 @@ contract C {
 略...
 
 ### Members of address
-略...
+-  `<address>.balance (uint256)`: balance of the Address in Wei
+-  `<address payable>.send(uint256 amount) returns (bool)`: send given amount of `Wei` to Address, returns `false` on failure
+-  `<address payable>.transfer(uint256 amount)`: send given amount of `Wei` to Address, throws on failure
 
 ### Block and Transaction Properties
--  `block.timestamp` (`uint`): current block timestamp in seconds since Unix epoch
+-  `block.timestamp` (`uint`): current block timestamp in seconds since Unix epoch 原来是`now`，新版本用`block.timestamp`替代`now`
+-  `block.number (uint)`: current block number
 -  `msg.data` (`bytes`): complete calldata
 -  `msg.sender` (`address`): sender of the message (current call)
 -  `msg.value` (`uint`): number of wei sent with the message
@@ -829,3 +843,30 @@ function myFunction() <public|private|external|internal> returns (bool) {
 -  `indexed`: for event parameters: Stores the parameter as topic.
 -  `virtual`: for functions and modifiers: Allows the function’s or modifier’s behavior to be changed in derived contracts.
 -  `override`: States that this function, modifier or public state variable changes the behavior of a function or modifier in a base contract.
+
+# Compiler
+略...
+
+# Internals
+略...
+
+# Advisory content
+略...
+
+# Additional Material
+## NatSpec Format
+-  `@title`
+-  `@author`
+-  `@notice`
+-  `@dev`
+-  `@param`
+-  `@return`
+-  `@inheritdoc`
+-  `@custom:...`
+
+## SMTChecker and Formal Verification
+## Yul
+## Import Path Resolution
+
+# Resources
+略...
