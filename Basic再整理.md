@@ -667,7 +667,7 @@ contract B is A(1) {
 略...
 
 #### Multiple Inheritance and Linearization
-- “Linearization of inheritance graph impossible
+- Linearization of inheritance graph impossible
 ```
 contract X {}
 contract A is X {}
