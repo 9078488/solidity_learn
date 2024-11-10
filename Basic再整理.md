@@ -679,6 +679,85 @@ contract C is A, X {}
 略...
 
 ### Abstract Contracts
+```
+abstract contract Feline {
+    function utterance() public pure virtual returns (bytes32);
+}
+
+contract Cat is Feline {
+    function utterance() public pure override returns (bytes32) { return "miaow"; }
+}
+```
+
 ### Interfaces
+```
+interface Token {
+    enum TokenType { Fungible, NonFungible }
+    struct Coin { string obverse; string reverse; }
+    function transfer(address recipient, uint amount) external;
+}
+```
+
 ### Libraries
+```
+struct bigint {
+    uint[] limbs;
+}
+
+library BigInt {
+    function fromUint(uint x) internal pure returns (bigint memory r) {
+        r.limbs = new uint[](1);
+        r.limbs[0] = x;
+    }
+
+    function add(bigint memory a, bigint memory b) internal pure returns (bigint memory r) {
+        r.limbs = new uint[](max(a.limbs.length, b.limbs.length));
+        uint carry = 0;
+        for (uint i = 0; i < r.limbs.length; ++i) {
+            uint limbA = limb(a, i);
+            uint limbB = limb(b, i);
+            unchecked {
+                r.limbs[i] = limbA + limbB + carry;
+
+                if (limbA + limbB < limbA || (limbA + limbB == type(uint).max && carry > 0))
+                    carry = 1;
+                else
+                    carry = 0;
+            }
+        }
+        if (carry > 0) {
+            // too bad, we have to add a limb
+            uint[] memory newLimbs = new uint[](r.limbs.length + 1);
+            uint i;
+            for (i = 0; i < r.limbs.length; ++i)
+                newLimbs[i] = r.limbs[i];
+            newLimbs[i] = carry;
+            r.limbs = newLimbs;
+        }
+    }
+
+    function limb(bigint memory a, uint index) internal pure returns (uint) {
+        return index < a.limbs.length ? a.limbs[index] : 0;
+    }
+
+    function max(uint a, uint b) private pure returns (uint) {
+        return a > b ? a : b;
+    }
+}
+
+contract C {
+    using BigInt for bigint;
+
+    function f() public pure {
+        bigint memory x = BigInt.fromUint(7);
+        bigint memory y = BigInt.fromUint(type(uint).max);
+        bigint memory z = x.add(y);
+        assert(z.limb(1) > 0);
+    }
+}
+```
+
 ### Using For
+略...
+
+
