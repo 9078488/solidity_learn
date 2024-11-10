@@ -761,3 +761,71 @@ contract C {
 略...
 
 
+## Inline Assembly
+### Example
+略...
+
+### Access to External Variables, Functions and Libraries
+略...
+
+### Things to Avoid
+略...
+
+### Conventions in Solidity
+略...
+
+### Advanced Safe Use of Memory
+略...
+
+## Cheatsheet
+### Order of Precedence of Operators
+
+### ABI Encoding and Decoding Functions
+`abi.encodePacked(...) returns (bytes memory)`
+
+### Members of bytes and string
+略...
+
+### Members of address
+略...
+
+### Block and Transaction Properties
+-  `block.timestamp` (`uint`): current block timestamp in seconds since Unix epoch
+-  `msg.data` (`bytes`): complete calldata
+-  `msg.sender` (`address`): sender of the message (current call)
+-  `msg.value` (`uint`): number of wei sent with the message
+  
+### Validations and Assertions
+-  `assert(bool condition)`
+-  `require(bool condition)`
+-  `require(bool condition, string memory message)`
+-  `revert()`
+-  `revert(string memory message)`
+
+### Mathematical and Cryptographic Functions
+-  `keccak256(bytes memory) returns (bytes32)`
+
+### Contract-related
+略...
+
+### Type Information
+-  `type(T).min`
+-  `type(T).max`
+  
+### Function Visibility Specifiers
+```
+function myFunction() <public|private|external|internal> returns (bool) {
+    return true;
+}
+```
+
+### Modifiers
+-  `pure`: for functions: Disallows modification or access of state.
+-  `view`: for functions: Disallows modification of state.
+-  `payable`: for functions: Allows them to receive Ether together with a call.
+-  `constant`: for state variables: Disallows assignment (except initialization), does not occupy storage slot.
+-  `immutable`: for state variables: Allows assignment at construction time and is constant when deployed. Is stored in code.
+-  `anonymous`: for events: Does not store event signature as topic.
+-  `indexed`: for event parameters: Stores the parameter as topic.
+-  `virtual`: for functions and modifiers: Allows the function’s or modifier’s behavior to be changed in derived contracts.
+-  `override`: States that this function, modifier or public state variable changes the behavior of a function or modifier in a base contract.
