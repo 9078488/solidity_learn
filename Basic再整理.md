@@ -525,8 +525,159 @@ contract A {
 ```
 
 ### Events
+#### Members of Events
+略...
+
+#### Example
+```
+contract ClientReceipt {
+    event Deposit(
+        address indexed from,
+        bytes32 indexed id,
+        uint value
+    );
+
+    function deposit(bytes32 id) public payable {
+        // Events are emitted using `emit`, followed by
+        // the name of the event and the arguments
+        // (if any) in parentheses. Any such invocation
+        // (even deeply nested) can be detected from
+        // the JavaScript API by filtering for `Deposit`.
+        emit Deposit(msg.sender, id, msg.value);
+    }
+}
+```
+
+#### Additional Resources for Understanding Events
+略...
+
 ### Custom Errors
+```
+error InsufficientBalance(uint256 available, uint256 required);
+
+contract TestToken {
+    mapping(address => uint) balance;
+    function transferWithRevertError(address to, uint256 amount) public {
+        if (amount > balance[msg.sender])
+            revert InsufficientBalance({
+                available: balance[msg.sender],
+                required: amount
+            });
+        balance[msg.sender] -= amount;
+        balance[to] += amount;
+    }
+    function transferWithRequireError(address to, uint256 amount) public {
+        require(amount <= balance[msg.sender], InsufficientBalance(balance[msg.sender], amount));
+        balance[msg.sender] -= amount;
+        balance[to] += amount;
+    }
+    // ...
+}
+```
+
 ### Inheritance
+#### Function Overriding
+> `virtual`  +  `override`
+
+- 单base
+```
+contract Base
+{
+    function foo() virtual external view {}
+}
+
+contract Middle is Base {}
+
+contract Inherited is Middle
+{
+    function foo() override public pure {}
+}
+```
+
+- 双base
+```
+contract Base1
+{
+    function foo() virtual public {}
+}
+
+contract Base2
+{
+    function foo() virtual public {}
+}
+
+contract Inherited is Base1, Base2
+{
+    // Derives from multiple bases defining foo(), so we must explicitly
+    // override it
+    function foo() public override(Base1, Base2) {}
+}
+```
+
+#### Modifier Overriding
+> `virtual`  +  `override`
+
+- 单base
+```
+contract Base
+{
+    modifier foo() virtual {_;}
+}
+
+contract Inherited is Base
+{
+    modifier foo() override {_;}
+}
+```
+
+- 双base
+```
+contract Base1
+{
+    modifier foo() virtual {_;}
+}
+
+contract Base2
+{
+    modifier foo() virtual {_;}
+}
+
+contract Inherited is Base1, Base2
+{
+    modifier foo() override(Base1, Base2) {_;}
+}
+```
+
+#### Constructors
+```
+abstract contract A {
+    uint public a;
+
+    constructor(uint a_) {
+        a = a_;
+    }
+}
+
+contract B is A(1) {
+    constructor() {}
+}
+```
+
+#### Arguments for Base Constructors
+略...
+
+#### Multiple Inheritance and Linearization
+- “Linearization of inheritance graph impossible
+```
+contract X {}
+contract A is X {}
+// This will not compile
+contract C is A, X {}
+```
+
+#### Inheriting Different Kinds of Members of the Same Name
+略...
+
 ### Abstract Contracts
 ### Interfaces
 ### Libraries
